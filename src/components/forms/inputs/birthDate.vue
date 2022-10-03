@@ -30,14 +30,27 @@ export default class BirthDate extends Vue {
     if (!value) {
       return 'This field is required';
     }
+
+    if (!moment(value, 'DD-MM-YYYY', true).isValid()) {
+      return 'This field must contain a valid date';
+    }
+
+    const actualYear = moment().format('YYYY');
+    const birthDateYear = moment(value).format('YYYY');
+
+    const transform1 = Number(actualYear);
+    const transform2 = Number(birthDateYear);
+
+    if (transform1 - transform2 >= 100) {
+      console.log(actualYear, birthDateYear);
+      return 'You must be under 100 years old';
+    }
+
     // if the field is not a valid date
     // const regex = /^[0-9]{2}[-]{1}[0-9]{2}[-]{1}[0-9]{4}/g;
     // if (!regex.test(value)) {
     //   return 'This field must have the following format DD-MM-YYYY';
     // }
-    if (!moment(value, 'DD-MM-YYYY').isValid()) {
-      return 'This field must contain a valid date';
-    }
     // All is good
     return true;
   }
