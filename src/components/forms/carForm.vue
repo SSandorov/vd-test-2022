@@ -3,44 +3,79 @@
     <template #title>Autoverzekering vergelijken</template>
 
     <template #content>
-        <p>
-            Replace me for input fields
-        </p>
+      <Form @submit="onSubmit">
+        <!-- <Field name="email" type="email" placeHolder="john@doe" :rules="validateEmail"/>
+        <div class="separation-1"></div>
+        <ErrorMessage name="email" /> -->
 
         <!-- LicensePlate -->
-
+        <licence-plate/>
         <!-- Zipcode -->
-
+        <zip-code/>
         <!-- Housenumber -->
-
+        <house-number/>
         <!-- Housenumber addition -->
-
+        <house-number-addition/>
         <!-- birthdate -->
-
+        <birth-date/>
         <!-- ClaimFree years -->
-
+        <p>Claim Free years</p>
         <!-- Kilometrage -->
-
-        <div class="btn" @click="onSubmit">
+        <kilometrage/>
+        <div class="separation-1"></div>
+        <button class="btn">Vergelijken</button>
+        <!-- <div class="btn" @click="onSubmit">
             Vergelijken
-        </div>
+        </div> -->
+      </Form>
     </template>
   </simple-card>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { Form, Field, ErrorMessage } from 'vee-validate';
 import SimpleCard from './simpleCard.vue';
+import LicencePlate from './inputs/licencePlate.vue';
+import ZipCode from './inputs/zipCode.vue';
+import HouseNumber from './inputs/houseNumber.vue';
+import HouseNumberAddition from './inputs/houseNumberAddition.vue';
+import BirthDate from './inputs/birthDate.vue';
+import Kilometrage from './inputs/kilometrage.vue';
 
 @Options({
   components: {
     SimpleCard,
+    LicencePlate,
+    ZipCode,
+    HouseNumber,
+    HouseNumberAddition,
+    BirthDate,
+    Kilometrage,
+    Form,
+    Field,
+    ErrorMessage,
   },
 })
 export default class CarForm extends Vue {
-  onSubmit(): void {
-    console.log('Button is clicked');
+  onSubmit(values: string): void {
+    console.log(JSON.stringify(values, null, 2));
   }
+  // validateEmail(value:string):string|boolean {
+  //   // if the field is empty
+  //   if (!value) {
+  //     return 'This field is required';
+  //   }
+
+  //   // if the field is not a valid email
+  //   const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  //   if (!regex.test(value)) {
+  //     return 'This field must be a valid email';
+  //   }
+
+  //   // All is good
+  //   return true;
+  // }
 }
 </script>
 
