@@ -38,7 +38,7 @@ export default class Kilometrage extends Vue {
     selected = '7501 t/m 10000 KM';
 
     kilometres = [
-      { text: '0 t/m 7500 KM', value: 1 },
+      { text: '0 t/m 7500 KM', value: '0 t/m 7500 KM' },
       { text: '7501 t/m 10000 KM', value: '7501 t/m 10000 KM' },
       { text: '10001 t/m 12000 KM', value: '10001 t/m 12000 KM' },
       { text: '12001 t/m 15000 KM', value: '12001 t/m 15000 KM' },

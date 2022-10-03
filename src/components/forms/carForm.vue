@@ -19,7 +19,7 @@
         <!-- birthdate -->
         <birth-date/>
         <!-- ClaimFree years -->
-        <p>Claim Free years</p>
+        <claim-years/>
         <!-- Kilometrage -->
         <kilometrage/>
         <div class="separation-1"></div>
@@ -41,6 +41,7 @@ import ZipCode from './inputs/zipCode.vue';
 import HouseNumber from './inputs/houseNumber.vue';
 import HouseNumberAddition from './inputs/houseNumberAddition.vue';
 import BirthDate from './inputs/birthDate.vue';
+import ClaimYears from './inputs/claimYears.vue';
 import Kilometrage from './inputs/kilometrage.vue';
 
 @Options({
@@ -51,6 +52,7 @@ import Kilometrage from './inputs/kilometrage.vue';
     HouseNumber,
     HouseNumberAddition,
     BirthDate,
+    ClaimYears,
     Kilometrage,
     Form,
     Field,
