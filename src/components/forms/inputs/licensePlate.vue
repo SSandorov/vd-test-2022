@@ -33,6 +33,8 @@ import { Field, ErrorMessage } from 'vee-validate';
 })
 
 export default class LicensePlate extends Vue {
+  carInfo = '';
+
   validLicense(value:string):string|boolean {
     // if the field is empty
     if (!value) {
@@ -44,12 +46,14 @@ export default class LicensePlate extends Vue {
       return 'This field must be a valid license plate XXXXXX';
     }
 
-    this.rdwApi(value);
+    if (!this.rdwApi(value)) {
+      return 'This is not a valid licence plate';
+    }
     // All is good
     return true;
   }
 
-  rdwApi(value:string):void {
+  rdwApi(value:string):string {
     const urlRDW = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json';
     const getVehicle = async () => {
       // const resp = await fetch(`${urlRDW}?kenteken=${value}`);
@@ -81,15 +85,18 @@ export default class LicensePlate extends Vue {
             return val.charAt(0).toUpperCase() + val.slice(1).toLowerCase();
           };
           const brand = capitalizeBrand(merk);
-          const carInfo = `${brand} ${yearAdm}`;
-          console.log(carInfo);
-          return carInfo;
+          this.carInfo = `${brand} ${yearAdm}`;
+          // console.log(this.carInfo);
         })
         .catch((resp) => {
-          console.log('Must add a valid license plate');
+          if (resp) {
+            return console.log('Must be a valid licence plate');
+          }
+          return resp;
         });
     };
     getVehicle();
+    return this.carInfo;
   }
 }
 </script>
