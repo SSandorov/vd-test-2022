@@ -1,7 +1,8 @@
 <template>
-    <p>Birth Date</p>
+    <label for="birth-date">Birth Date</label>
     <Field
     id="birth-date"
+    class="birth-date"
     name="birth-date"
     type="text"
     placeholder="DD-MM-YYYY"

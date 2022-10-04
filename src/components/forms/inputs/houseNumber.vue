@@ -1,6 +1,8 @@
 <template>
-    <p>House Number</p>
+    <label for="house-number">House Number</label>
     <Field
+    id="house-number"
+    class="field"
     name="house-number"
     type="text"
     :rules="validHouseNumber"

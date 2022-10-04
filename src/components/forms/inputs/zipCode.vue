@@ -1,6 +1,8 @@
 <template>
-  <p>Zip Code</p>
+  <label for="zip-code">Zip Code</label>
   <Field
+    id="zip-code"
+    class="field"
     style="text-transform: uppercase;"
     name="zip-code"
     type="text"

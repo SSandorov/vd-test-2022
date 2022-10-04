@@ -1,26 +1,28 @@
 <template>
-    <p>Kilometrage</p>
-    <Field
-        v-model="selected"
-        name="kilometrage"
-        as="select"
-        required
-    >
-        <!-- <option value="0 t/m 7500 KM">0 t/m 7500 KM</option>
-        <option value="" selected>7501 t/m 10000 KM</option>
-        <option value="10001 t/m 12000 KM">10001 t/m 12000 KM</option>
-        <option value="12001 t/m 15000 KM">12001 t/m 15000 KM</option>
-        <option value="15001 t/m 20000 KM">15001 t/m 20000 KM</option>
-        <option value="20001 t/m 25000 KM">20001 t/m 25000 KM</option>
-        <option value="25001 t/m 30000 KM">25001 t/m 30000 KM</option>
-        <option value="30001 t/m 90000 KM">30001 t/m 90000 KM</option> -->
-        <option
-        v-for="type in kilometres"
-        :key="type.text"
-        :value="type.value">{{type.text}}</option>
-    </Field>
-    <div class="separation-1"></div>
-    <ErrorMessage name="kilometrage"/>
+  <label for="kilometrage">Kilometrage</label>
+  <Field
+    id="kilometrage"
+    class="field"
+    v-model="selected"
+    name="kilometrage"
+    as="select"
+    required
+  >
+      <!-- <option value="0 t/m 7500 KM">0 t/m 7500 KM</option>
+      <option value="" selected>7501 t/m 10000 KM</option>
+      <option value="10001 t/m 12000 KM">10001 t/m 12000 KM</option>
+      <option value="12001 t/m 15000 KM">12001 t/m 15000 KM</option>
+      <option value="15001 t/m 20000 KM">15001 t/m 20000 KM</option>
+      <option value="20001 t/m 25000 KM">20001 t/m 25000 KM</option>
+      <option value="25001 t/m 30000 KM">25001 t/m 30000 KM</option>
+      <option value="30001 t/m 90000 KM">30001 t/m 90000 KM</option> -->
+      <option
+      v-for="type in kilometres"
+      :key="type.text"
+      :value="type.value">{{type.text}}</option>
+  </Field>
+  <div class="separation-1"></div>
+  <ErrorMessage name="kilometrage"/>
 </template>
 
 <script lang="ts">

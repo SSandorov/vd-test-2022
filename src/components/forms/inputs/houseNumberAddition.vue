@@ -1,6 +1,8 @@
 <template>
-    <p>House Number Addition</p>
+    <label for="house-number-addition">House Number Addition</label>
     <Field
+    id="house-number-addition"
+    class="field"
     name="house-number-addition"
     type="text"
     :rules="validHouseNumberAddition"

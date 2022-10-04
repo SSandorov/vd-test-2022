@@ -1,8 +1,10 @@
 <template>
-  <p>License Plate</p>
+  <label for="license-plate">License Plate</label>
   <Field
+    id="license-plate"
+    class="field"
     style="text-transform: uppercase;"
-    name="licence-plate"
+    name="license-plate"
     type="text"
     :rules="validLicense"
     oninput="this.value=this.value.replace('-','').replace(' ', '');
@@ -13,7 +15,7 @@
   />
   <div class="separation-1"></div>
   <p class="" v-if="showCarInfo()">{{carInfo}}</p>
-  <ErrorMessage name="licence-plate"/>
+  <ErrorMessage name="license-plate"/>
 </template>
 
 <script lang="ts">
@@ -39,7 +41,7 @@ export default class LicensePlate extends Vue {
 
   showCarInfo():boolean {
     if (this.carInfo.length === 0) {
-      return true;
+      return false;
     }
     return true;
   }
@@ -47,18 +49,23 @@ export default class LicensePlate extends Vue {
   validLicense(value:string):string|boolean {
     // if the field is empty
     if (!value) {
+      this.carInfo = '';
       return 'This field is required';
     }
     // if the field is not a valid licence plate
     const regex = /^[A-Z0-9]{6}$/i;
     if (!regex.test(value)) {
+      this.carInfo = '';
       return 'This field must be a valid license plate XXXXXX';
     }
 
     if (!this.rdwApi(value)) {
+      this.carInfo = '';
       this.warningMessage = 'This is not a valid license plate';
       return this.warningMessage;
     }
+
+    this.warningMessage = '';
     // All is good
     return true;
   }

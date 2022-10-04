@@ -106,7 +106,7 @@ export default class CarForm extends Vue {
         }
     }
 
-    .btn {
+    /* .btn {
         background: #0cbe3b;
         text-align: center;
         padding: 10px 10px;
@@ -115,9 +115,9 @@ export default class CarForm extends Vue {
         border-radius: 4px;
         cursor: pointer;
         transition: .1s ease;
-    }
+    } */
 
-    .btn:hover {
+    /* .btn:hover {
         background: #0ed642;
-    }
+    } */
 </style>
