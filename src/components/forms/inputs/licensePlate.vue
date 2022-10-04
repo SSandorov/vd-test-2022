@@ -90,6 +90,10 @@ export default class LicensePlate extends Vue {
         })
         .catch((resp) => {
           if (resp) {
+            // reset value of carInfo to show text when it is not a correct license plate
+            // covers the issue of putting a correct license but it is not yours, so the
+            // value can be reset to start again
+            this.carInfo = '';
             return console.log('Must be a valid licence plate');
           }
           return resp;
