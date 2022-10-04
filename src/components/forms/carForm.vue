@@ -34,7 +34,12 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import { Form, Field, ErrorMessage } from 'vee-validate';
+import {
+  Form,
+  Field,
+  ErrorMessage,
+  // configure as configurationVee,
+} from 'vee-validate';
 import SimpleCard from './simpleCard.vue';
 import LicensePlate from './inputs/licensePlate.vue';
 import ZipCode from './inputs/zipCode.vue';
@@ -43,6 +48,10 @@ import HouseNumberAddition from './inputs/houseNumberAddition.vue';
 import BirthDate from './inputs/birthDate.vue';
 import ClaimYears from './inputs/claimYears.vue';
 import Kilometrage from './inputs/kilometrage.vue';
+
+// configurationVee({
+//   validateOnInput: true,
+// });
 
 @Options({
   components: {
@@ -59,9 +68,14 @@ import Kilometrage from './inputs/kilometrage.vue';
     ErrorMessage,
   },
 })
+
 export default class CarForm extends Vue {
   onSubmit(values: string): void {
-    console.log(JSON.stringify(values, null, 2));
+    // console.log(JSON.stringify(values, null, 2));
+    const exampleUrl = 'https://example.com/';
+    const asString = new URLSearchParams(values).toString();
+    const urlSubmission = `${exampleUrl}${asString}`;
+    console.log(urlSubmission);
   }
   // validateEmail(value:string):string|boolean {
   //   // if the field is empty

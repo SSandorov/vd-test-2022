@@ -39,7 +39,7 @@ import BirthDate from './birthDate.vue';
 })
 
 export default class ClaimYears extends Vue {
-    selected = 0;
+    selected = '0';
 
     years: number[] = [-5, -4, -3, -2, -1, 0];
 
