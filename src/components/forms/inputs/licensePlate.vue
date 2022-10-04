@@ -12,7 +12,7 @@
     required
   />
   <div class="separation-1"></div>
-  <p class="" :rules="rdwApi"></p>
+  <p class="" v-if="showCarInfo()">{{carInfo}}</p>
   <ErrorMessage name="licence-plate"/>
 </template>
 
@@ -35,6 +35,15 @@ import { Field, ErrorMessage } from 'vee-validate';
 export default class LicensePlate extends Vue {
   carInfo = '';
 
+  warningMessage = '';
+
+  showCarInfo():boolean {
+    if (this.carInfo.length === 0) {
+      return true;
+    }
+    return true;
+  }
+
   validLicense(value:string):string|boolean {
     // if the field is empty
     if (!value) {
@@ -47,7 +56,8 @@ export default class LicensePlate extends Vue {
     }
 
     if (!this.rdwApi(value)) {
-      return 'This is not a valid licence plate';
+      this.warningMessage = 'This is not a valid license plate';
+      return this.warningMessage;
     }
     // All is good
     return true;
@@ -85,6 +95,7 @@ export default class LicensePlate extends Vue {
             return val.charAt(0).toUpperCase() + val.slice(1).toLowerCase();
           };
           const brand = capitalizeBrand(merk);
+          this.warningMessage = '';
           this.carInfo = `${brand} ${yearAdm}`;
           // console.log(this.carInfo);
         })
@@ -94,7 +105,6 @@ export default class LicensePlate extends Vue {
             // covers the issue of putting a correct license but it is not yours, so the
             // value can be reset to start again
             this.carInfo = '';
-            return console.log('Must be a valid licence plate');
           }
           return resp;
         });
