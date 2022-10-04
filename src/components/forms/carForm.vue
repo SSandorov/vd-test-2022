@@ -9,7 +9,7 @@
         <ErrorMessage name="email" /> -->
 
         <!-- LicensePlate -->
-        <licence-plate/>
+        <license-plate/>
         <!-- Zipcode -->
         <zip-code/>
         <!-- Housenumber -->
@@ -36,7 +36,7 @@
 import { Options, Vue } from 'vue-class-component';
 import { Form, Field, ErrorMessage } from 'vee-validate';
 import SimpleCard from './simpleCard.vue';
-import LicencePlate from './inputs/licencePlate.vue';
+import LicensePlate from './inputs/licensePlate.vue';
 import ZipCode from './inputs/zipCode.vue';
 import HouseNumber from './inputs/houseNumber.vue';
 import HouseNumberAddition from './inputs/houseNumberAddition.vue';
@@ -47,7 +47,7 @@ import Kilometrage from './inputs/kilometrage.vue';
 @Options({
   components: {
     SimpleCard,
-    LicencePlate,
+    LicensePlate,
     ZipCode,
     HouseNumber,
     HouseNumberAddition,
