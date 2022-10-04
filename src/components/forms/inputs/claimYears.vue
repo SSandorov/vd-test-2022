@@ -4,7 +4,7 @@
         v-model="selected"
         name="claim-years"
         as="select"
-        :onclick="nClaimYears"
+        :onfocus="nClaimYears"
         required
     >
         <!-- <option value="0 t/m 7500 KM">0 t/m 7500 KM</option>
@@ -16,9 +16,10 @@
         <option value="25001 t/m 30000 KM">25001 t/m 30000 KM</option>
         <option value="30001 t/m 90000 KM">30001 t/m 90000 KM</option> -->
         <option
-        v-for="year in years"
-        :key="year.text"
-        :value="year.value">{{year.text}}</option>
+        v-for="(year, index) in years"
+        :key="index"
+        :value="String(year)"
+        >{{year}}</option>
     </Field>
     <div class="separation-1"></div>
     <ErrorMessage name="kilometrage"/>
@@ -40,30 +41,47 @@ import BirthDate from './birthDate.vue';
 export default class ClaimYears extends Vue {
     selected = 0;
 
-    claimYears = {};
+    years: number[] = [-5, -4, -3, -2, -1, 0];
 
-    nClaimYears():any {
+    // claimYears = {};
+
+    nClaimYears():void {
       // const birth = new BirthDate();
       // const inputBirthDate2 = birth.getInput();
-      const inputBirthDate2 = Number(localStorage.getItem('birthdate'));
+      const inputBirthDate = Number(localStorage.getItem('birthdate'));
       // console.log(inputBirthDate2);
       const inputActualYear = Number(localStorage.getItem('actualYear'));
 
-      const range = inputActualYear - inputBirthDate2 - 18;
-      console.log(range);
+      if (inputBirthDate < inputActualYear - 100) {
+        this.years = [];
+      } else {
+        const range = inputActualYear - inputBirthDate - 18;
 
-      Object.assign(this.claimYears, { text: range, value: range });
+        const defaultYears: number[] = [-5, -4, -3, -2, -1, 0];
+
+        const rangeClaimYears = [...Array(range + 1).keys()];
+        // console.log(rangeClaimYears);
+
+        const iteration = (val:number) => {
+        // Object.assign(this.claimYears, { text: val, value: val });
+        // console.log(val);
+          if (val === 0) {
+            this.years = defaultYears;
+          } else {
+            defaultYears.push(val);
+          }
+        };
+
+        rangeClaimYears.forEach(iteration);
+
+        this.years = defaultYears;
+      }
+      // for (let i = 0; i <= rangeClaimYears.length; i += 1) {
+      // Object.assign(this.claimYears, { text: i, value: i });
+      // this.claimYears['text'] = i;
+      // this.claimYears['value'] = i;
+      // }
     }
-
-    years = [
-      { text: -5, value: -5 },
-      { text: -4, value: -4 },
-      { text: -3, value: -3 },
-      { text: -2, value: -2 },
-      { text: -1, value: -1 },
-      { text: 0, value: 0 },
-      this.claimYears,
-    ];
 }
 // let inputBirthDate = localStorage.getItem('birthdate');
 </script>

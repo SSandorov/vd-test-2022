@@ -47,7 +47,14 @@ export default class BirthDate extends Vue {
 
     // for dates older or equal to 100 years
     if (transform1 - transform2 >= 100) {
+      localStorage.removeItem('birthdate');
       return 'You must be under 100 years old';
+    }
+
+    // for younger than 18 years
+    if (transform1 - transform2 - 18 < 0) {
+      localStorage.removeItem('birthdate');
+      return 'You should be older than 18';
     }
 
     // if the field is not a valid date
