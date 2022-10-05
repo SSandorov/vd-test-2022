@@ -100,7 +100,6 @@ export default class CarForm extends Vue {
 <style scoped>
     .vd-form {
         width: 330px;
-        border: 1px red solid;
 
         display: flex;
         justify-content: center;
