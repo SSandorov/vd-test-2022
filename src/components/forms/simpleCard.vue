@@ -27,8 +27,8 @@ export default class SimpleCard extends Vue {}
 
     .simple-card__title {
         padding-bottom: 10px;
-        font-weight: 700;
-        font-size: 18px;
+        /* font-weight: 700;
+        font-size: 18px; */
         margin: 0;
     }
 </style>

@@ -1,18 +1,20 @@
 <template>
-  <label for="zip-code">Zip Code</label>
-  <Field
-    id="zip-code"
-    class="field"
-    style="text-transform: uppercase;"
-    name="zip-code"
-    type="text"
-    :rules="validZipCode"
-    oninput="this.value=this.value.replace(' ', '');
-    this.value=this.value.toUpperCase()"
-    required
-  />
-  <div class="separation-1"></div>
-  <ErrorMessage name="zip-code"/>
+  <div class="zip-code-container">
+    <label for="zip-code">Zip Code</label>
+    <Field
+      id="zip-code"
+      class="field"
+      style="text-transform: uppercase;"
+      name="zip-code"
+      type="text"
+      :rules="validZipCode"
+      oninput="this.value=this.value.replace(' ', '');
+      this.value=this.value.toUpperCase()"
+      required
+    />
+    <div class="separation-1"></div>
+    <ErrorMessage name="zip-code"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -44,3 +46,11 @@ export default class ZipCode extends Vue {
   }
 }
 </script>
+
+<style scoped>
+  .zip-code-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>

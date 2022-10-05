@@ -1,18 +1,20 @@
 <template>
-    <label for="birth-date">Birth Date</label>
+  <div class="birth-date-container">
+    <label for="birth-date">Date of birth</label>
     <Field
-    id="birth-date"
-    class="birth-date"
-    name="birth-date"
-    type="text"
-    placeholder="DD-MM-YYYY"
-    :rules="validBirthDate"
-    :onkeyup="getInput"
-    oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*)\./g, '$1')"
-    required
+      id="birth-date"
+      class="birth-date"
+      name="birth-date"
+      type="text"
+      placeholder="DD-MM-YYYY"
+      :rules="validBirthDate"
+      :onkeyup="getInput"
+      oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*)\./g, '$1')"
+      required
     />
     <div class="separation-1"></div>
     <ErrorMessage name="birth-date"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -83,3 +85,11 @@ export default class BirthDate extends Vue {
   // }
 }
 </script>
+
+<style scoped>
+  .birth-date-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>

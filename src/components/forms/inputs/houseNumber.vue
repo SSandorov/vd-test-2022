@@ -1,16 +1,18 @@
 <template>
+  <div class="house-number-container">
     <label for="house-number">House Number</label>
     <Field
-    id="house-number"
-    class="field"
-    name="house-number"
-    type="text"
-    :rules="validHouseNumber"
-    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')"
-    required
+      id="house-number"
+      class="field"
+      name="house-number"
+      type="text"
+      :rules="validHouseNumber"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')"
+      required
     />
     <div class="separation-1"></div>
     <ErrorMessage name="house-number"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -40,3 +42,11 @@ export default class HouseNumber extends Vue {
   }
 }
 </script>
+
+<style scoped>
+  .house-number-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>

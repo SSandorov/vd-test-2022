@@ -1,21 +1,23 @@
 <template>
-  <label for="license-plate">License Plate</label>
-  <Field
-    id="license-plate"
-    class="field"
-    style="text-transform: uppercase;"
-    name="license-plate"
-    type="text"
-    :rules="validLicense"
-    oninput="this.value=this.value.replace('-','').replace(' ', '');
-    this.value=this.value.toUpperCase()"
-    onpaste="return false"
-    autocomplete="off"
-    required
-  />
-  <div class="separation-1"></div>
-  <p class="" v-if="showCarInfo()">{{carInfo}}</p>
-  <ErrorMessage name="license-plate"/>
+  <div class="license-container">
+    <label for="license-plate">License Plate</label>
+    <Field
+      id="license-plate"
+      class="field"
+      style="text-transform: uppercase;"
+      name="license-plate"
+      type="text"
+      :rules="validLicense"
+      oninput="this.value=this.value.replace('-','').replace(' ', '');
+      this.value=this.value.toUpperCase()"
+      onpaste="return false"
+      autocomplete="off"
+      required
+    />
+    <div class="separation-1"></div>
+    <p class="" v-if="showCarInfo()">{{carInfo}}</p>
+    <ErrorMessage name="license-plate"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -121,3 +123,11 @@ export default class LicensePlate extends Vue {
   }
 }
 </script>
+
+<style scoped>
+  .license-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>

@@ -1,30 +1,32 @@
 <template>
-  <label for="cliam-years">Claim Free Years</label>
-  <Field
-    id="claim-years"
-    class="field"
-    v-model="selected"
-    name="claim-years"
-    as="select"
-    :onfocus="nClaimYears"
-    required
-  >
-    <!-- <option value="0 t/m 7500 KM">0 t/m 7500 KM</option>
-    <option value="" selected>7501 t/m 10000 KM</option>
-    <option value="10001 t/m 12000 KM">10001 t/m 12000 KM</option>
-    <option value="12001 t/m 15000 KM">12001 t/m 15000 KM</option>
-    <option value="15001 t/m 20000 KM">15001 t/m 20000 KM</option>
-    <option value="20001 t/m 25000 KM">20001 t/m 25000 KM</option>
-    <option value="25001 t/m 30000 KM">25001 t/m 30000 KM</option>
-    <option value="30001 t/m 90000 KM">30001 t/m 90000 KM</option> -->
-    <option
-    v-for="(year, index) in years"
-    :key="index"
-    :value="String(year)"
-    >{{year}}</option>
-  </Field>
-  <div class="separation-1"></div>
-  <ErrorMessage name="kilometrage"/>
+  <div class="claim-years-container">
+    <label for="cliam-years">Claim Free Years</label>
+    <Field
+      id="claim-years"
+      class="field"
+      v-model="selected"
+      name="claim-years"
+      as="select"
+      :onfocus="nClaimYears"
+      required
+    >
+      <!-- <option value="0 t/m 7500 KM">0 t/m 7500 KM</option>
+      <option value="" selected>7501 t/m 10000 KM</option>
+      <option value="10001 t/m 12000 KM">10001 t/m 12000 KM</option>
+      <option value="12001 t/m 15000 KM">12001 t/m 15000 KM</option>
+      <option value="15001 t/m 20000 KM">15001 t/m 20000 KM</option>
+      <option value="20001 t/m 25000 KM">20001 t/m 25000 KM</option>
+      <option value="25001 t/m 30000 KM">25001 t/m 30000 KM</option>
+      <option value="30001 t/m 90000 KM">30001 t/m 90000 KM</option> -->
+      <option
+      v-for="(year, index) in years"
+      :key="index"
+      :value="String(year)"
+      >{{year}}</option>
+    </Field>
+    <div class="separation-1"></div>
+    <ErrorMessage name="kilometrage"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -87,3 +89,11 @@ export default class ClaimYears extends Vue {
 }
 // let inputBirthDate = localStorage.getItem('birthdate');
 </script>
+
+<style scoped>
+  .claim-years-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>

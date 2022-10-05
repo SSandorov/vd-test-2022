@@ -1,6 +1,8 @@
 <template>
   <simple-card class="vd-form">
-    <template #title>Autoverzekering vergelijken</template>
+    <template #title>
+      <h1>Autoverzekering vergelijken</h1>
+    </template>
 
     <template #content>
       <Form @submit="onSubmit">
@@ -98,11 +100,19 @@ export default class CarForm extends Vue {
 <style scoped>
     .vd-form {
         width: 330px;
+        border: 1px red solid;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
     @media only screen and (max-width: 768px) {
         .vd-form {
             width: 100%;
+
+            /* display: flex;
+            justify-content: center; */
         }
     }
 

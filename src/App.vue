@@ -21,198 +21,198 @@ export default class App extends Vue {}
 * {
   font-family: 'Open Sans', sans-serif;
 } */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: rgb(254, 254, 254);
-  }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: rgb(254, 254, 254);
+    }
 
-/* Paragraph and subtitles fonts */
-@font-face {
-    font-family: "Roboto";
-    src: url(assets/fonts/Roboto/roboto-v29-latin-300.woff2);
-    font-style: normal;
-    font-weight: 300;
-}
+    /* Paragraph and subtitles fonts */
+    @font-face {
+        font-family: "Roboto";
+        src: url(assets/fonts/Roboto/roboto-v29-latin-300.woff2);
+        font-style: normal;
+        font-weight: 300;
+    }
 
-@font-face {
-    font-family: "Roboto";
-    src: url(assets/fonts/Roboto/roboto-v29-latin-300italic.woff2);
-    font-style: italic;
-    font-weight: 300;
-}
+    @font-face {
+        font-family: "Roboto";
+        src: url(assets/fonts/Roboto/roboto-v29-latin-300italic.woff2);
+        font-style: italic;
+        font-weight: 300;
+    }
 
-@font-face {
-    font-family: "Roboto";
-    src: url(assets/fonts/Roboto/roboto-v29-latin-700.woff2);
-    font-style: normal;
-    font-weight: 700;
-}
+    @font-face {
+        font-family: "Roboto";
+        src: url(assets/fonts/Roboto/roboto-v29-latin-700.woff2);
+        font-style: normal;
+        font-weight: 700;
+    }
 
-/* Title fonts */
-@font-face {
-    font-family: "Roboto Slab";
-    src: url(assets/fonts/Roboto_Slab/roboto-slab-v16-latin-300.woff2);
-    font-style: normal;
-    font-weight: 300;
-}
+    /* Title fonts */
+    @font-face {
+        font-family: "Roboto Slab";
+        src: url(assets/fonts/Roboto_Slab/roboto-slab-v16-latin-300.woff2);
+        font-style: normal;
+        font-weight: 300;
+    }
 
-@font-face {
-    font-family: "Roboto Slab";
-    src: url(assets/fonts/Roboto_Slab/roboto-slab-v16-latin-regular.woff2);
-    font-style: normal;
-    font-weight: 400;
-}
+    @font-face {
+        font-family: "Roboto Slab";
+        src: url(assets/fonts/Roboto_Slab/roboto-slab-v16-latin-regular.woff2);
+        font-style: normal;
+        font-weight: 400;
+    }
 
-@font-face {
-    font-family: "Roboto Slab";
-    src: url(assets/fonts/Roboto_Slab/roboto-slab-v16-latin-700.woff2);
-    font-style: normal;
-    font-weight: 700;
-}
+    @font-face {
+        font-family: "Roboto Slab";
+        src: url(assets/fonts/Roboto_Slab/roboto-slab-v16-latin-700.woff2);
+        font-style: normal;
+        font-weight: 700;
+    }
 
-/* Mobile Styles */
+    /* Mobile Styles */
 
-h1, h2 {
-    font-family: "Roboto Slab", serif;
-    font-weight: 300;
+    h1, h2 {
+        font-family: "Roboto Slab", serif;
+        font-weight: 300;
 
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-}
+        line-height: 1.5em;
+        margin-bottom: 1.5em;
+    }
 
-h3, h4, h5, h6, button {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    h3, h4, h5, h6, button {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
 
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-}
+        line-height: 1.5em;
+        margin-bottom: 1.5em;
+    }
 
-p, li, label, input, textarea, option, select {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 300;
+    p, li, label, input, textarea, option, select {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 300;
 
-    text-align: left;
+        text-align: left;
 
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-}
+        line-height: 1.5em;
+        margin-bottom: 1.5em;
+    }
 
-strong {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
+    strong {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 700;
 
-    text-align: left;
+        text-align: left;
 
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-}
+        line-height: 1.5em;
+        margin-bottom: 1.5em;
+    }
 
-button {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    margin-top: 1em;
+    button {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-right: 1em;
+        padding-left: 1em;
+        margin-top: 1em;
 
-    border: 2px solid #0cbe3b;
-    border-radius: 10px;
+        border: 2px solid #0cbe3b;
+        border-radius: 10px;
 
-    background-color: white;
-}
+        background-color: white;
+    }
 
-button:hover {
-    transition: all 0.3s ease;
-    background-color: #0ed642;
-    color: white;
-}
+    button:hover {
+        transition: all 0.3s ease;
+        background-color: #0ed642;
+        color: white;
+    }
 
-input, textarea, option, select {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    input, textarea, option, select {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
 
-    border: 1px solid #0cbe3b;
-    border-radius: 3px;
+        border: 1px solid #0cbe3b;
+        border-radius: 3px;
 
-    background-color: white;
-}
+        background-color: white;
+    }
 
-input:focus, select:focus {
-    border: 1px solid #0ed642;
-}
+    input:focus, select:focus {
+        border: 1px solid #0ed642;
+    }
 
-/* Font sizes */
+    /* Font sizes */
 
-h1 {
-    font-size: 30px;
-}
+    h1 {
+        font-size: 18px;
+    }
 
-h2 {
-    font-size: 25px;
-}
+    h2 {
+        font-size: 16px;
+    }
 
-h3, h4, h5, h6, button {
-    font-size: 20px;
-}
+    h3, h4, h5, h6, button {
+        font-size: 16px;
+    }
 
-p, li, label, input, textarea, option, select {
-    font-size: 14px;
-}
+    p, li, label, input, textarea, option, select {
+        font-size: 14px;
+    }
 
-@media only screen and (min-width:401px){
+    @media only screen and (max-width: 768px){
 
-/* max width size for the text */
+    /* max width size for the text */
 
-p, h1, h2, h3, h4, h5, h6, li, ol, ul, input, label, textarea, select, option {
-    max-width: 580px;
-}
+    /* p, h1, h2, h3, h4, h5, h6, li, ol, ul, input, label, textarea, select, option {
+        max-width: 580px;
+    } */
 
-/* Font sizes */
-h1 {
-    font-size: 40px;
-}
+    /* Font sizes */
+        /* h1 {
+            font-size: 18px;
+        } */
 
-h2 {
-    font-size: 35px;
-}
+    /* h2 {
+        font-size: 35px;
+    } */
 
-h3, h4, h5, h6, button {
-    font-size: 25px;
-}
+        /* h3, h4, h5, h6, button {
+            font-size: 16px;
+        } */
 
-p, li, label, input, textarea, select, option {
-    font-size: 16px;
-}
-}
+        /* p, li, label, input, textarea, select, option {
+            font-size: 14px;
+        } */
+    }
 
-/* Desktop Styles */
-@media only screen and (min-width: 961px) {
-/* max width size for the text */
+    /* Desktop Styles */
+    /* @media only screen and (min-width: 961px) { */
+    /* max width size for the text */
 
-p, h1, h2, h3, h4, h5, h6, li, ol, ul, label, input, textarea, select, option {
-    max-width: 700px;
-}
+        /* p, h1, h2, h3, h4, h5, h6, li, ol, ul, label, input, textarea, select, option {
+            max-width: 700px;
+        } */
 
-/* Font sizes */
-h1 {
-    font-size: 50px;
-}
+    /* Font sizes */
+        /* h1 {
+            font-size: 22px;
+        }
 
-h2 {
-    font-size: 45px;
-}
+        h2 {
+            font-size: 45px;
+        }
 
-h3, h4, h5, h6, button {
-    font-size: 30px;
-}
+        h3, h4, h5, h6, button {
+            font-size: 20px;
+        }
 
-p, li, label, input, textarea, option, select {
-    font-size: 20px;
-}
-}
+        p, li, label, input, textarea, option, select {
+            font-size: 18px;
+        } */
+    /* } */
 </style>

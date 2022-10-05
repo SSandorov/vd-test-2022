@@ -1,15 +1,17 @@
 <template>
+  <div class="house-add-container">
     <label for="house-number-addition">House Number Addition</label>
     <Field
-    id="house-number-addition"
-    class="field"
-    name="house-number-addition"
-    type="text"
-    :rules="validHouseNumberAddition"
-    oninput="this.value = this.value.replace(/[^0-9A-Z]/i, '').replace(/(\..*)\./i, '$1')"
+      id="house-number-addition"
+      class="field"
+      name="house-number-addition"
+      type="text"
+      :rules="validHouseNumberAddition"
+      oninput="this.value = this.value.replace(/[^0-9A-Z]/i, '').replace(/(\..*)\./i, '$1')"
     />
     <div class="separation-1"></div>
     <ErrorMessage name="house-number-addition"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -35,3 +37,16 @@ export default class HouseNumberAddition extends Vue {
   }
 }
 </script>
+
+<style scoped>
+  .house-add-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* .field {
+    width: 100%;
+    border: 1px red solid;
+  } */
+</style>
