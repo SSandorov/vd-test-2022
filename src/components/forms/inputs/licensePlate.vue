@@ -61,11 +61,13 @@ export default class LicensePlate extends Vue {
       return 'This field must be a valid license plate XXXXXX';
     }
 
-    // if (!this.rdwApi(value)) {
-    //   this.carInfo = '';
-    //   this.warningMessage = 'This is not a valid license plate';
-    //   return this.warningMessage;
-    // }
+    this.rdwApi(value);
+
+    if (!this.rdwApi(value)) {
+      this.carInfo = '';
+      this.warningMessage = 'This is not a valid license plate';
+      return this.warningMessage;
+    }
 
     this.warningMessage = '';
     // All is good
