@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <car-form />
   </div>
 </template>
@@ -74,6 +74,11 @@ export default class App extends Vue {}
 
     /* Mobile Styles */
 
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
     h1, h2 {
         font-family: "Roboto Slab", serif;
         font-weight: 300;
@@ -98,8 +103,19 @@ export default class App extends Vue {}
 
         text-align: left;
 
-        line-height: 1.5em;
-        margin-bottom: 1.5em;
+        line-height: 1em;
+        margin-bottom: 1em;
+    }
+
+    span {
+        font-family: "Roboto", sans-serif;
+        font-style: italic;
+        font-weight: 300;
+
+        text-align: left;
+
+        line-height: 1em;
+        margin-bottom: 1em;
     }
 
     strong {
@@ -136,14 +152,24 @@ export default class App extends Vue {}
         padding-top: 0.5em;
         padding-bottom: 0.5em;
 
-        border: 1px solid #0cbe3b;
+        border: 1.5px solid #ccc;
         border-radius: 3px;
+
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
 
         background-color: white;
     }
 
     input:focus, select:focus {
-        border: 1px solid #0ed642;
+        border: 1.5px solid lightblue;
+
+        box-shadow: 1px 1px 5px lightblue;
+    }
+
+    span {
+        color: red;
     }
 
     /* Font sizes */

@@ -45,8 +45,11 @@ export default class HouseNumber extends Vue {
 
 <style scoped>
   .house-number-container {
-    width: 100%;
+    width: 110px;
+
     display: flex;
     flex-direction: column;
+
+    margin-right: 30px;
   }
 </style>

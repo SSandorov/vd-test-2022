@@ -92,7 +92,7 @@ export default class ClaimYears extends Vue {
 
 <style scoped>
   .claim-years-container {
-    width: 100%;
+    width: 150px;
     display: flex;
     flex-direction: column;
   }

@@ -15,7 +15,7 @@
       required
     />
     <div class="separation-1"></div>
-    <p class="" v-if="showCarInfo()">{{carInfo}}</p>
+    <p class="car-info" v-if="showCarInfo()">{{carInfo}}</p>
     <ErrorMessage name="license-plate"/>
   </div>
 </template>
@@ -131,5 +131,10 @@ export default class LicensePlate extends Vue {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  .car-info {
+    font-style: normal;
+    font-weight: 700;
   }
 </style>

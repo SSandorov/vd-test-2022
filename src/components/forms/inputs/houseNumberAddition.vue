@@ -40,7 +40,7 @@ export default class HouseNumberAddition extends Vue {
 
 <style scoped>
   .house-add-container {
-    width: 100%;
+    width: 150px;
     display: flex;
     flex-direction: column;
   }

@@ -88,8 +88,11 @@ export default class BirthDate extends Vue {
 
 <style scoped>
   .birth-date-container {
-    width: 100%;
+    width: 110px;
+
     display: flex;
     flex-direction: column;
+
+    margin-right: 30px;
   }
 </style>

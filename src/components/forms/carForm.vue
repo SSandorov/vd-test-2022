@@ -15,13 +15,17 @@
         <!-- Zipcode -->
         <zip-code/>
         <!-- Housenumber -->
-        <house-number/>
-        <!-- Housenumber addition -->
-        <house-number-addition/>
+        <div class="house-numbers">
+          <house-number/>
+          <!-- Housenumber addition -->
+          <house-number-addition/>
+        </div>
         <!-- birthdate -->
-        <birth-date/>
-        <!-- ClaimFree years -->
-        <claim-years/>
+        <div class="claim-birthday">
+          <birth-date/>
+          <!-- ClaimFree years -->
+          <claim-years/>
+        </div>
         <!-- Kilometrage -->
         <kilometrage/>
         <div class="separation-1"></div>
@@ -106,12 +110,30 @@ export default class CarForm extends Vue {
         flex-direction: column;
     }
 
+    .house-numbers {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    .claim-birthday {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
     @media only screen and (max-width: 768px) {
         .vd-form {
-            width: 100%;
+          display: flex;
+          justify-content: center;
+        }
 
-            /* display: flex;
-            justify-content: center; */
+        .house-numbers {
+          justify-content: flex-start;
+        }
+        .claim-birthday {
+          justify-content: flex-start;
         }
     }
 
